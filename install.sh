@@ -26,16 +26,12 @@ fi
 # Clone the repository
 echo "Downloading OLO Appliance..."
 if [ -d "olo-appliance-release" ]; then
-    echo "Directory already exists. Updating..."
-    cd olo-appliance-release
-    # Reset any local changes before pulling
-    git reset --hard HEAD
-    git clean -fd
-    git pull
-else
-    git clone https://github.com/OLO-Robotics/olo-appliance-release.git
-    cd olo-appliance-release
+    echo "Directory already exists. Removing and re-cloning for clean install..."
+    rm -rf olo-appliance-release
 fi
+
+git clone https://github.com/OLO-Robotics/olo-appliance-release.git
+cd olo-appliance-release
 
 # Make setup script executable and run it
 echo "Setting up OLO Appliance..."
