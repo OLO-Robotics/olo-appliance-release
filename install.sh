@@ -28,6 +28,9 @@ echo "Downloading OLO Appliance..."
 if [ -d "olo-appliance-release" ]; then
     echo "Directory already exists. Updating..."
     cd olo-appliance-release
+    # Reset any local changes before pulling
+    git reset --hard HEAD
+    git clean -fd
     git pull
 else
     git clone https://github.com/OLO-Robotics/olo-appliance-release.git
