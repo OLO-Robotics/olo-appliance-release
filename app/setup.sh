@@ -43,6 +43,21 @@ if [ "$1" == "reconfigure" ]; then
     exit 0
 fi
 
+# For production (--dist), set up credentials before starting
+if [ "$USE_DIST" = true ]; then
+    if [ ! -f .env ]; then
+        echo "Setting up credentials for production..."
+        read -p "Enter username: " USERNAME
+        read -s -p "Enter password: " PASSWORD
+        echo
+        echo "APP_USERNAME=$USERNAME" > .env
+        echo "APP_PASSWORD=$PASSWORD" >> .env
+        echo "Credentials saved to .env file."
+    else
+        echo "Using existing credentials from .env file."
+    fi
+fi
+
 if [ "$1" == "reconfigure-port" ]; then
     echo "Reconfiguring appliance port..."
     read -p "Enter port number: " PORT
