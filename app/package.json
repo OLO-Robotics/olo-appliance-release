@@ -2,7 +2,7 @@
   "name": "appliance",
   "version": "1.0.0",
   "description": "WSL-based Node.js appliance",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",

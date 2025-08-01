@@ -38,7 +38,7 @@ fi
 echo "Setting up OLO Appliance..."
 chmod +x app/setup.sh
 cd app
-./setup.sh --defaults
+./setup.sh --defaults --dist
 cd ..
 
 echo ""

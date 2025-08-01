@@ -13,13 +13,24 @@ set -e
 # Check for --defaults and --dist flags
 USE_DEFAULTS=false
 USE_DIST=false
-if [ "$1" == "--defaults" ]; then
-    USE_DEFAULTS=true
-    shift  # Remove --defaults from arguments
-elif [ "$1" == "--dist" ]; then
-    USE_DIST=true
-    shift  # Remove --dist from arguments
-fi
+
+# Process all arguments to find flags
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --defaults)
+            USE_DEFAULTS=true
+            shift
+            ;;
+        --dist)
+            USE_DIST=true
+            shift
+            ;;
+        *)
+            # Keep other arguments for environment setting
+            break
+            ;;
+    esac
+done
 
 if [ "$1" == "reconfigure" ]; then
     echo "Reconfiguring credentials..."
