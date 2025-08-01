@@ -172,8 +172,12 @@ if [ "$USE_DIST" = true ]; then
         echo "APP_USERNAME=$USERNAME" > .env
         echo "APP_PASSWORD=$PASSWORD" >> .env
         echo "Credentials saved to .env file."
+        echo "Debug - .env file contents:"
+        cat .env
     else
         echo "Using existing credentials from .env file."
+        echo "Debug - existing .env file contents:"
+        cat .env
     fi
     
     ENV="production"
