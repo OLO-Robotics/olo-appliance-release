@@ -36,9 +36,28 @@ cd olo-appliance-release
 # Just install dependencies without starting the app
 echo "Installing dependencies..."
 cd app
-# Ensure setup.sh is executable
+
+# Debug: Check current permissions
+echo "Current setup.sh permissions:"
+ls -la setup.sh
+
+# Ensure setup.sh is executable with multiple attempts
+echo "Setting execute permissions on setup.sh..."
+chmod +x setup.sh
 chmod 755 setup.sh
-ls -la setup.sh  # Debug: show file permissions
+
+# Verify permissions were set
+echo "After setting permissions:"
+ls -la setup.sh
+
+# Test if the file is actually executable
+if [ -x setup.sh ]; then
+    echo "✅ setup.sh is now executable"
+else
+    echo "❌ Failed to make setup.sh executable"
+    echo "Manual fix required: chmod +x setup.sh"
+fi
+
 npm install
 cd ..
 
