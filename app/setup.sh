@@ -43,20 +43,7 @@ if [ "$1" == "reconfigure" ]; then
     exit 0
 fi
 
-# For production (--dist), set up credentials before starting
-if [ "$USE_DIST" = true ]; then
-    if [ ! -f .env ]; then
-        echo "Setting up credentials for production..."
-        read -p "Enter username: " USERNAME
-        read -s -p "Enter password: " PASSWORD
-        echo
-        echo "APP_USERNAME=$USERNAME" > .env
-        echo "APP_PASSWORD=$PASSWORD" >> .env
-        echo "Credentials saved to .env file."
-    else
-        echo "Using existing credentials from .env file."
-    fi
-fi
+
 
 if [ "$1" == "reconfigure-port" ]; then
     echo "Reconfiguring appliance port..."
@@ -176,6 +163,19 @@ fi
 # Set environment based on argument or default to development
 # If --dist is used, always use production environment
 if [ "$USE_DIST" = true ]; then
+    # For production, set up credentials before starting if they don't exist
+    if [ ! -f .env ]; then
+        echo "Setting up credentials for production..."
+        read -p "Enter username: " USERNAME
+        read -s -p "Enter password: " PASSWORD
+        echo
+        echo "APP_USERNAME=$USERNAME" > .env
+        echo "APP_PASSWORD=$PASSWORD" >> .env
+        echo "Credentials saved to .env file."
+    else
+        echo "Using existing credentials from .env file."
+    fi
+    
     ENV="production"
     echo "Starting release application in production mode..."
     export NODE_ENV=$ENV
