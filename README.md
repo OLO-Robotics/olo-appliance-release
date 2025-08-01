@@ -16,6 +16,11 @@ Copy and paste this command to download and install:
 curl -sSL https://raw.githubusercontent.com/OLO-Robotics/olo-appliance-release/main/install.sh | bash
 ```
 
+The installer will:
+- Create a clean directory at `~/olo-appliance`
+- Download and install all dependencies
+- Set up the appliance automatically
+
 ## Manual Install
 
 If you prefer to install manually:

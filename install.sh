@@ -3,6 +3,12 @@ set -e
 
 echo "Installing OLO Appliance..."
 
+# Create a clean installation directory
+INSTALL_DIR="$HOME/olo-appliance"
+echo "Creating installation directory: $INSTALL_DIR"
+mkdir -p "$INSTALL_DIR"
+cd "$INSTALL_DIR"
+
 # Check if git is installed
 if ! command -v git &> /dev/null; then
     echo "Installing Git..."
@@ -39,7 +45,7 @@ echo ""
 echo "✅ OLO Appliance installed successfully!"
 echo ""
 echo "To start the appliance, run:"
-echo "  cd olo-appliance-release"
+echo "  cd ~/olo-appliance/olo-appliance-release"
 echo "  cd app"
 echo "  ./setup.sh --dist"
 echo ""
