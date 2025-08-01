@@ -33,19 +33,19 @@ fi
 git clone https://github.com/OLO-Robotics/olo-appliance-release.git
 cd olo-appliance-release
 
-# Make setup script executable and run it
-echo "Setting up OLO Appliance..."
-chmod +x app/setup.sh
+# Just install dependencies without starting the app
+echo "Installing dependencies..."
 cd app
-./setup.sh --defaults --dist
+npm install
 cd ..
 
 echo ""
 echo "✅ OLO Appliance installed successfully!"
 echo ""
-echo "To start the appliance, run:"
-echo "  cd ~/olo-appliance/olo-appliance-release"
-echo "  cd app"
-echo "  ./setup.sh --dist"
+echo "To configure and start the appliance:"
+echo "  cd ~/olo-appliance/olo-appliance-release/app"
+echo "  ./setup.sh --defaults --dist"
+echo ""
+echo "Note: You will be prompted for your username and password when starting."
 echo ""
 echo "For more information, see the README.md file." 

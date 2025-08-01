@@ -19,7 +19,7 @@ curl -sSL https://raw.githubusercontent.com/OLO-Robotics/olo-appliance-release/m
 The installer will:
 - Create a clean directory at `~/olo-appliance`
 - Download and install all dependencies
-- Set up the appliance automatically by running the setup.sh file
+- Provide instructions to start the appliance
 
 ## What the setup does
 
