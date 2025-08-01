@@ -162,9 +162,9 @@ fi
 # If --dist is used, always use production environment
 if [ "$USE_DIST" = true ]; then
     ENV="production"
-    echo "Starting release application from dist folder in production mode..."
+    echo "Starting release application in production mode..."
     export NODE_ENV=$ENV
-    node dist/index.js
+    node index.js
 else
     ENV=${1:-development}
     echo "Starting application in $ENV mode..."
