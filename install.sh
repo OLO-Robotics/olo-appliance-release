@@ -36,7 +36,9 @@ cd olo-appliance-release
 # Just install dependencies without starting the app
 echo "Installing dependencies..."
 cd app
-chmod +x setup.sh
+# Ensure setup.sh is executable
+chmod 755 setup.sh
+ls -la setup.sh  # Debug: show file permissions
 npm install
 cd ..
 
