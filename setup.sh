@@ -148,13 +148,15 @@ else
 fi
 
 # Set environment based on argument or default to development
-ENV=${1:-development}
-export NODE_ENV=$ENV
-
+# If --dist is used, always use production environment
 if [ "$USE_DIST" = true ]; then
-    echo "Starting obfuscated application from dist folder in $ENV mode..."
+    ENV="production"
+    echo "Starting release application from dist folder in production mode..."
+    export NODE_ENV=$ENV
     node dist/index.js
 else
+    ENV=${1:-development}
     echo "Starting application in $ENV mode..."
+    export NODE_ENV=$ENV
     npm start
 fi 
