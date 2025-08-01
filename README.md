@@ -1,6 +1,6 @@
 # OLO Appliance - Quick Install
 
-This is the obfuscated release of the OLO Appliance. Follow these simple steps to install and run it.
+This is the release version of the OLO Appliance. Follow these simple steps to install and run it.
 
 ## Prerequisites
 
@@ -40,9 +40,26 @@ If you prefer to install manually:
 ## What the setup does
 
 - Installs Node.js dependencies
-- Configures ROSbridge connection
+- Configures ROSbridge connection (uses localhost:9090 by default)
 - Sets up environment variables
 - Starts the appliance in production mode
+
+## Setup Options
+
+### `--defaults` flag
+- Uses default configuration without prompting
+- Automatically configures ROSbridge for localhost:9090
+- Skips interactive questions for faster setup
+
+### Production mode (`--dist`)
+- Runs the release version of the code
+- Connects to production ROSbridge and services
+- Recommended for end users
+
+### Development mode (without `--dist`)
+- Runs the source code directly
+- Connects to local development services
+- Only used if you have the full source code for development
 
 ## Troubleshooting
 
