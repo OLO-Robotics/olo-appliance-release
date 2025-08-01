@@ -30,14 +30,17 @@ fi
 
 # Make setup script executable and run it
 echo "Setting up OLO Appliance..."
-chmod +x setup.sh
+chmod +x app/setup.sh
+cd app
 ./setup.sh --defaults
+cd ..
 
 echo ""
 echo "✅ OLO Appliance installed successfully!"
 echo ""
 echo "To start the appliance, run:"
 echo "  cd olo-appliance-release"
+echo "  cd app"
 echo "  ./setup.sh --dist"
 echo ""
 echo "For more information, see the README.md file." 

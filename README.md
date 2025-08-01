@@ -28,12 +28,15 @@ If you prefer to install manually:
 
 2. **Run the setup script**:
    ```bash
-   chmod +x setup.sh
+   chmod +x app/setup.sh
+   cd app
    ./setup.sh --defaults
+   cd ..
    ```
 
 3. **Start the appliance**:
    ```bash
+   cd app
    ./setup.sh --dist
    ```
 
