@@ -118,7 +118,7 @@ if [ "$use_local" = "y" ] || [ "$use_local" = "Y" ]; then
 
     # Now check if ROSbridge is running
     echo "DEBUG: Checking if anything is listening on localhost:9090"
-    if nc -zv localhost 9090; then
+    if timeout 3 nc -zv localhost 9090 2>/dev/null; then
         echo "ROSbridge is already running on localhost:9090."
     else
         echo "ROSbridge is NOT running on localhost:9090."
