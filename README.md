@@ -24,8 +24,10 @@ The installer will:
 
 ## To run the Appliance
 
-- cd ~/olo-appliance/olo-appliance-release/app
-- ./setup.sh --defaults --dist
+```bash
+cd ~/olo-appliance/olo-appliance-release/app
+./setup.sh --defaults --dist
+```
 
 Note: You will be prompted for your username and password when starting.
 
