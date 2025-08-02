@@ -4,7 +4,8 @@ This is the release version of the OLO Appliance. Follow these simple steps to i
 
 ## Prerequisites
 
-- **Linux/WSL** (Ubuntu 20.04+ recommended)
+- **Linux/WSL** (Ubuntu 22.04+)
+- **ROS2 and its dependencies**
 - **Node.js** (version 18+)
 - **Git**
 

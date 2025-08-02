@@ -52,9 +52,9 @@ ls -la setup.sh
 
 # Test if the file is actually executable
 if [ -x setup.sh ]; then
-    echo "✅ setup.sh is now executable"
+    echo "setup.sh is now executable"
 else
-    echo "❌ Failed to make setup.sh executable"
+    echo "Failed to make setup.sh executable"
     echo "Manual fix required: chmod +x setup.sh"
 fi
 
@@ -62,7 +62,7 @@ npm install
 cd ..
 
 echo ""
-echo "✅ OLO Appliance installed successfully!"
+echo "OLO Appliance installed successfully!"
 echo ""
 echo "To configure and start the appliance:"
 echo "  cd ~/olo-appliance/olo-appliance-release/app"

@@ -43,8 +43,6 @@ if [ "$1" == "reconfigure" ]; then
     exit 0
 fi
 
-
-
 if [ "$1" == "reconfigure-port" ]; then
     echo "Reconfiguring appliance port..."
     read -p "Enter port number: " PORT
