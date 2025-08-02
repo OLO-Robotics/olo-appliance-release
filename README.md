@@ -31,7 +31,7 @@ cd ~/olo-appliance/olo-appliance-release/app
 ./setup.sh --defaults --dist
 ```
 
-Note: You will be prompted for your username and password when starting. To set up an account visit https://olo-poc-5213c89ae086.herokuapp.com/
+Note: You will be prompted for your OLO username and password when starting. To set up a free account visit https://olo-poc-5213c89ae086.herokuapp.com/
 
 - Installs Node.js dependencies
 - Configures ROSbridge connection (uses localhost:9090 by default)
