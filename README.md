@@ -11,7 +11,7 @@ This is the release version of the OLO Appliance. Follow these simple steps to i
 
 ## Quick Install
 
-Copy and paste this command to download and install:
+Copy and paste this command in your Ubuntu terminal (or WSL terminal) to download and install:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/OLO-Robotics/olo-appliance-release/main/install.sh | bash
@@ -24,12 +24,14 @@ The installer will:
 
 ## To run the Appliance
 
+Copy and paste this command to navigate to the correct directory and start the appliance app:
+
 ```bash
 cd ~/olo-appliance/olo-appliance-release/app
 ./setup.sh --defaults --dist
 ```
 
-Note: You will be prompted for your username and password when starting.
+Note: You will be prompted for your username and password when starting. To set up an account visit https://olo-poc-5213c89ae086.herokuapp.com/
 
 - Installs Node.js dependencies
 - Configures ROSbridge connection (uses localhost:9090 by default)
